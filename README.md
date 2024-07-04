@@ -34,8 +34,7 @@ The main goals of this project are:
 - **NodeJS:** Server-side runtime environment for running the backend.
 - **JIRA Agile:** Project management tool for tracking progress and managing tasks.
 - **Git:** Version control system for tracking changes and collaboration.
-- **Wildfly:** Application server used to deploy the web application.
-- **Maven:** Build automation and project management tool.
+
 
 ## Team and Responsibilities
 The project required a team of 5 members with well-defined and distinct skills and responsibilities. The team followed a Kanban-inspired development methodology using JIRA Agile for task management.

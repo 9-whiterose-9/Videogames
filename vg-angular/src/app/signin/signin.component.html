@@ -1,0 +1,55 @@
+<div class="container">
+  <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <p>Insert your username: </p>
+    <label for="username">Name: </label>
+    <input
+      type="text"
+      id="username"
+      [(ngModel)]="username"
+      name="username"
+      required
+      #uname="ngModel"
+    />
+    <div
+      *ngIf="uname.errors && myForm.submitted"
+      [ngClass]="'error'"
+    >
+      <div *ngIf="uname.errors['required']" class="user-name-required" >User name required.</div>
+    </div>
+
+    <p>
+      Insert your password: 
+    </p>
+    <label for="pword">Password:</label>
+    <input
+      type="password"
+      id="pword"
+      name="pword"
+      [(ngModel)]="password"
+      name="password"
+      required
+      #pwd="ngModel"
+    />
+    <div
+      *ngIf="pwd.errors && myForm.submitted"
+      [ngClass]="'error'"
+    >
+      <div *ngIf="pwd.errors['required']" class="password-required">Password required.</div>
+    </div>
+
+    <!-- <button type="submit" [disabled]="!myForm.valid">Validate</button> -->
+    <div class="button-container">
+      <button type="submit">Sign In</button>
+      <button type="button" (click)="goBack()">Return to Homepage</button>
+    </div>
+  
+    <!-- Display custom error messages -->
+    <div *ngIf="loginFailed" class="login-failed">
+      {{ loginErrorMessage }}
+    </div>
+    <!-- Display success message -->
+    <div *ngIf="loginSucessful" >
+      {{ loginSucessfulMessage }}
+    </div>
+  </form>
+</div>

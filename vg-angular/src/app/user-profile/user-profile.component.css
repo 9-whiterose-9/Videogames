@@ -1,0 +1,61 @@
+/* Styles for mobile devices */
+@media only screen and (max-width: 768px) {
+  .profile-pic {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Styles for desktop devices */
+@media only screen and (min-width: 769px) {
+  .profile-pic {
+    max-width: 40%;
+    height: auto;
+    float: left;
+    margin-right: 2%;
+  }
+
+  .profile-info {
+    float: left;
+    width: 58%;
+  }
+}
+
+/* Shared styles for both mobile and desktop devices */
+.profile-pic {
+  border-radius: 50%;
+  margin-bottom: 1em;
+}
+
+.gobackarrow {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5em;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.gobackarrow:hover {
+  color: #0056b3;
+}
+
+
+
+
+.user-lists a {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.following, .followers, .user-lists {
+  margin-top: 2em;
+}
+
+.following, .followers, .user-lists h2 {
+  margin-bottom: 0.5em;
+}
+
+.following li, .followers li, .user-lists a {
+  margin-left: 1em;
+}
+

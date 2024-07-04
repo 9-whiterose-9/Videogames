@@ -1,0 +1,16 @@
+<div id="search-component">
+    <label for="search-box"></label>
+    <i class="fas fa-search"></i>
+    <input #searchBox id="search-box" placeholder = "Search for items.." (input)="search(searchBox.value)" />
+
+    <ul class="search-result">
+      <li *ngFor="let item of items$ | async" >
+        <a [routerLink]="'/items/' + item._id + '/detail'">
+          {{item.description}}
+        </a>
+      </li>
+      <li *ngIf="noResults" style="color: red;">No results found</li>
+    </ul>
+</div>
+
+

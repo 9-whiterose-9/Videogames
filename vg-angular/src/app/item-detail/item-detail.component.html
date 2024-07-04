@@ -1,0 +1,87 @@
+<button class="gobackarrow" type="button" (click)="goBack()">
+  <i class="fa-solid fa-circle-left"></i>
+</button>
+
+
+<div *ngIf="item">
+  <h2>
+    <i class="fa-solid fa-gamepad"></i>
+    {{item.description}} Details</h2>
+ 
+  <div>
+    <label for="item-description">Description: </label>
+    <span id="item-description">{{item.description}}</span>
+  </div>
+
+  <div>
+    <label for="item-type">Type: </label>
+    <span id="item-type">{{item.type}}</span>
+  </div>
+
+  <div>
+    <label for="item-platform">Platform: </label>
+    <span id="item-platform">{{item.platform}}</span>
+  </div>
+
+  <div>
+    <label for="item-idioms">Idioms: </label>
+    <span id="item-idioms">{{item.idioms}}</span>
+  </div>
+  <div>
+    <label for="item-price">Price: </label>
+    <span id="item-price">{{item.price}}</span>
+  </div>
+  <div>
+    <label for="item-globalClassification">Global Classification: </label>
+    <span id="item-globalClassification">{{item.globalClassification}}</span>
+  </div>
+  <div>
+
+    <label for="item-reviews">Reviews:</label>
+    <ul>
+      <li *ngFor="let review of item.reviews">
+
+        <div class="review_username">
+          <label for="item-review-username">Username: </label>
+          <span id="item-review-username">{{review.username}}</span>
+        </div>
+
+        <div class="review_comment">
+          <label for="item-review-comment">Comment: </label>
+          <span id="item-review-comment">{{review.comment}}</span>
+        </div>
+
+        <div class="review_rating">
+          <label for="item-review-rating">Rating: </label>
+          <span id="item-review-rating">{{review.rating}}</span>
+        </div>
+
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="item.mainImage">
+    <label for="item-mainImage"></label>
+    <img [src]="item.mainImage" alt="Main Image">
+  </div>
+
+  <div *ngIf="item.secondaryImages">
+    <label for="item-secondaryImages">Secondary Images: </label>
+    <ul>
+      <li *ngFor="let image of item.secondaryImages">
+        <img [src]="image" alt="Secondary Image">
+      </li>
+    </ul>
+  </div>
+  <div>
+    
+    <label for="item-videoLink"></label>
+    <button (click)="openVideoLink()">
+      <i class="fa-brands fa-youtube"></i>
+      Trailer</button>
+  </div>
+  
+  
+  <button class= "goback" type="button" (click)="goBack()">go back</button>
+  
+</div>

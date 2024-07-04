@@ -1,0 +1,42 @@
+<div *ngIf="currentUser">
+    <div class="header">
+      <div class="header-top">
+        <h1>Welcome, {{currentUser.username}}!</h1>
+        <button class="my-profile-button" type="button" [routerLink]="['/profile', currentUser._id]">
+          <i class="fa-solid fa-user"></i> My Profile</button>
+      </div>
+  
+      <div class="header-bottom">
+        <div class="header-bottom-left">
+          <app-item-search><i class="fa-duotone fa-magnifying-glass"></i></app-item-search>
+        </div>
+  
+        <div class="header-bottom-right">
+          <button class="my-profile-button" [routerLink]="['/profile', currentUser._id]">Following</button>
+          <button class="my-profile-button" [routerLink]="['/profile', currentUser._id]">Followers</button>
+          <button (click)="showLists = !showLists" class="toggle">My Lists</button>
+          <button class="my-profile-button" type="button" (click)="logOut()">Log out</button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="parent">
+      <div class="shop-items">
+        <h2 class="tooltip-library">Library Of items:</h2>
+        <ul>
+          <li class="item-container" *ngFor="let item of items"> 
+            <a [routerLink]="'/items/' + item._id + '/detail'">
+              <img [src]="item.mainImage">
+           </a>
+          </li>
+        </ul>
+      </div>
+  
+      <div class="lists-box" *ngIf="showLists">
+        <ul>
+          <a *ngFor="let ul of currentUser.user_lists" [routerLink]="'/profile/' + currentUser._id + '/mylists/' + ul.list_name + '/detail'">{{ul.list_name}}</a>
+        </ul>
+      </div>
+    </div>
+  </div>
+  

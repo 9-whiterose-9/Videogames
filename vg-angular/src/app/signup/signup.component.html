@@ -1,0 +1,59 @@
+<div class="master-container" [ngSwitch]="isRegistered">
+  <ng-template class="register" [ngSwitchCase]="0">
+    <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+      <p>Username must be at have at least 3 alphanumeric characters</p>
+      <label for="username">Name: </label>
+      <input
+        type="text"
+        id="username"
+        [(ngModel)]="username"
+        name="username"
+        required
+        [pattern]="userNamePattern"
+        #uname="ngModel"
+      />
+      <div
+        *ngIf="uname.errors && myForm.submitted && !isValidFormSubmitted"
+        [ngClass]="'error'"
+      >
+        <div *ngIf="uname.errors['required']" class="username-required">Username required.</div>
+        <div *ngIf="uname.errors['pattern']" class="username-not-valid">Username not valid.</div>
+      </div>
+
+      <p>
+        Password must consist of at least 8 characters and must include one
+        uppercase, one lowercase and one digit
+      </p>
+      <label for="pword">Password: </label>
+      <input
+        type="password"
+        id="pword"
+        [(ngModel)]="password"
+        [pattern]="passwordPattern"
+        name="password"
+        required
+        #pwd="ngModel"
+      />
+      <div
+        *ngIf="pwd.errors && myForm.submitted && !isValidFormSubmitted"
+        [ngClass]="'error'"
+      >
+        <div *ngIf="pwd.errors['required']" class="password-required">Password required.</div>
+        <div *ngIf="pwd.errors['pattern']" class="password-not-valid">Password not valid.</div>
+      </div>
+      <div class="button-container">
+      <button type="submit">Register</button>
+      <button type="button" (click)="goBack()">Return to Homepage</button>
+    </div>
+    </form>
+  </ng-template>
+  <ng-template class="success" [ngSwitchCase]="1">
+    <h1>Thank you for signing up!</h1>
+    <h2>You may now login with your username and password</h2>
+    <button type="button" (click)="goBack()">Back to Homepage</button>
+  </ng-template>
+  <ng-template class="refresh" [ngSwitchCase]="2">
+    <p>user already exists</p>
+    <button type="button" (click)="retry()">try again?</button>
+  </ng-template>
+</div>

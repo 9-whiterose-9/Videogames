@@ -1,0 +1,185 @@
+/* Overall styles */
+body {
+  font-family: Arial;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header styles */
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  padding: 20px;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu button {
+  width: 120px;
+  height: 40px;
+  margin: 0 5px;
+  padding: 8px 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  background-color: #4CAF50;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.nav-menu button:hover {
+  background-color: #3e8e41;
+}
+
+.fa-user,
+.fa-duotone {
+  margin-right: 5px;
+}
+
+.header-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.header-bottom-left {
+  margin-right: auto;
+}
+
+.tooltip-library {
+  font-size: 24px;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+
+.tooltip-library:hover::after {
+  content: "Below you can see all the items available in the store. Click on one of them to see their details.";
+  display: block;
+  position: absolute;
+  top: 1;
+  left: 5;
+  background-color: #555;
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+.toggle:hover::after {
+  content: "Click to see your personalized lists at the end of the page.";
+  display: block;
+  position: absolute;
+  top: 5;
+  left: 4;
+  background-color: #555;
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.shop-items {
+  margin-top: 40px;
+}
+
+.item-container {
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.item-container:last-child {
+  margin-right: 0;
+}
+
+.item-container img {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.lists-box {
+  margin-top: 40px;
+}
+
+.lists-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.lists-box a {
+  display: block;
+  color: #555;
+  font-size: 23px;
+  text-decoration: underline;
+  padding: 10px 0;
+}
+
+@media only screen and (max-width: 800px) {
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .my-profile-button {
+    margin-top: 0.5rem;
+  }
+
+  .toggle {
+    margin-top: 0.5rem;
+  }
+
+  .lists-box {
+    margin-top: 1rem;
+  }
+}
+
+/* Media query for screens with a maximum width of 900px */
+@media only screen and (max-width: 900px) {
+
+  /* Reorder the header-top elements using flexbox */
+  .header-top{
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-menu {
+    width: 100%;
+    order: 2; /* Move the nav-menu to the bottom */
+    margin-bottom: 8px;
+  }
+
+
+  app-item-search {
+    width: 100%;
+    order: 3; /* Move the app-item-search to the bottom */
+    margin-top: 5px;
+  }
+}

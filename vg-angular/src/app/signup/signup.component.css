@@ -1,0 +1,68 @@
+.master-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.register, .success, .refresh {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+label,
+input,
+button {
+  display: block;
+  margin: 10px;
+  font-size: 1.2rem;
+}
+
+input[type="text"],
+input[type="password"] {
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 1.2rem;
+}
+
+button[type="submit"],
+button[type="button"] {
+  background-color: #2196F3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover,
+button[type="button"]:hover {
+  background-color: #0c7cd5;
+}
+
+.error {
+  margin-top: 5px;
+  font-size: 1.1rem;
+}
+
+.username-required,
+.username-not-valid,
+.password-required,
+.password-not-valid {
+  color: red;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.button-container{
+  display: flex;
+  flex-direction: row;
+}

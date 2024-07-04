@@ -1,0 +1,14 @@
+
+<button class="gobackarrow" type="button" (click)="goBack()"  tabindex="0">
+  <i class="fa-solid fa-circle-left"></i>
+</button>
+
+<div *ngIf="userlist">
+  <h2>{{userlist.list_name}} Details</h2>
+  <ul>
+    <li *ngFor="let item of userlist.list_items">
+      {{ item.description }}
+    </li>
+  </ul>
+  <button class= "goback" type="button" (click)="goBack()">go back</button>
+</div>

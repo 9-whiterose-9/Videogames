@@ -1,0 +1,53 @@
+<button class="gobackarrow" type="button" (click)="goBack()"  tabindex="0">
+    <i class="fa-solid fa-circle-left"></i>
+</button>
+
+   
+    <div *ngIf="currentUser" >
+        <h1>{{currentUser.username}} 's profile</h1>
+		<img [src]="profilePic" alt="Default Profile Picture" class="profile-pic">
+		<div class="profile-info">
+			<ul>
+				<li><strong>Username:</strong> {{currentUser.username}}</li>
+				<li><strong>Password:</strong> {{currentUser.password}}</li>
+			</ul>
+		</div>
+
+		<div class="items">
+			<h2>Items</h2>
+			<li *ngFor="let item of currentUser.items">
+                <a [routerLink]="'/items/' + item._id + '/detail'" tabindex="0">
+                  {{item.description}}
+                </a>
+              </li>
+		</div>
+
+		<div class="following">
+			<h2><i class="fa-solid fa-user-friends"></i> Following</h2>
+			<ul>
+				<li *ngFor="let following_p of currentUser.following" tabindex="0">
+                    {{following_p.username}}
+				</li>
+			</ul>
+		</div>
+
+        <div class="followers">
+			<h2><i class="fa-solid fa-users"></i> Followers</h2>
+			<ul>
+				<li *ngFor="let follower of currentUser.followers" tabindex="0">
+                    {{follower.username}}
+				</li>
+			</ul>
+		</div>
+
+		<div class="user-lists">
+			<h2>User Lists</h2>
+			<ul>
+                <a *ngFor="let ul of currentUser.user_lists" [routerLink]="'/profile/' + currentUser._id + '/mylists/' + ul.list_name + '/detail'" tabindex="0">{{ul.list_name}}</a>
+            </ul>
+		</div>
+
+    </div>
+	
+	
+

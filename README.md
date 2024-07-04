@@ -1,5 +1,5 @@
 # Videogames Project for Information Systems Course 2022/2023
-This project focuses on the development of a web application to improve the visibility of games produced by our company and increase interaction between players.
+This project focuses on the development of a web application to improve the visibility of games produced by a company and increase interaction between players.
 
 ## Goals
 The main goals of this project are:
